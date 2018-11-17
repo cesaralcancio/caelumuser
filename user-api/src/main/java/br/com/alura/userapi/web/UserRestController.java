@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +47,7 @@ public class UserRestController {
 		return new ResponseEntity<Iterable<User>>(iUsers, HttpStatus.OK);
 	}
 	
-	@GetMapping("/teste/")
+	@GetMapping("/metrics/")
 	public @ResponseBody ResponseEntity<String> teste() {
 		String s = UserService.consultarForum(null);
 		return new ResponseEntity<String>(s, HttpStatus.OK);

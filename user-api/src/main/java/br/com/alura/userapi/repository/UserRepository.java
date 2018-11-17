@@ -8,6 +8,4 @@ import br.com.alura.userapi.domain.User;
 
 public interface UserRepository extends CrudRepository<User, UUID> {
 
-	
-	
 }
